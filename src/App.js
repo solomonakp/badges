@@ -14,7 +14,6 @@ export default class App extends Component {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          console.log(data);
           this.setState(function (state) {
             return {
               ...state,
@@ -42,7 +41,6 @@ export default class App extends Component {
   }
 
   render() {
-    const { data } = this.state;
     if (this.state.data === null) {
       return <div>isLoading</div>;
     } else if (this.state.data !== null) {
@@ -54,7 +52,6 @@ export default class App extends Component {
         </div>
       );
     } else {
-      console.log(this.state);
       return <div>{this.state.data.message}</div>;
     }
   }
