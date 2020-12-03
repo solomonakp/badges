@@ -1,8 +1,8 @@
 const theme = {
   fontFamily: {
-    circular: 'Circular std',
-    circularBook: 'Circular Std Book',
-    nunito: 'nunito',
+    circular: 'Montserrat',
+    circularBook: 'Montserrat',
+    nunito: 'Montserrat',
   },
   colors: {
     primary: '#0c1098',

@@ -170,13 +170,14 @@ export default function Pagination({
         .pagination-container {
           list-style-type: none;
           padding-left: 0;
-          margin-top: 150px;
+          margin-top: 50px;
           @media (max-width: 767.98px) {
             margin-top: 80px;
           }
 
           button {
             background-color: ${theme.colors.tertiary};
+            border: 0;
           }
           .pagination-link {
             outline: none;
@@ -188,8 +189,8 @@ export default function Pagination({
             justify-content: center;
             align-items: center;
             color: ${theme.colors.paragraphColor};
-            font-family: ${theme.fontFamily.circularBook};
-            opacity: 0.7;
+            font-family: ${theme.fontFamily.circular};
+
             transition: color 300ms ease-out, opacity 300ms ease-out;
             border-radius: 2px;
             background-color: transparent;
@@ -203,7 +204,6 @@ export default function Pagination({
               transition: color 300ms ease-in, opacity300ms ease-in;
               color: ${theme.colors.black};
               border: ${theme.border.brands};
-              opacity: 0.7;
             }
             &:hover {
               color: ${theme.colors.black};

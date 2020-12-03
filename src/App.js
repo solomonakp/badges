@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Badge from './components/Badge';
 import Paginate from './components/paginate';
+import Loader from './components/Loader';
 const PaginatedBadge = Paginate(Badge);
 export default class App extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class App extends Component {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
+          console.log(data);
           this.setState(function (state) {
             return {
               ...state,
@@ -42,12 +44,13 @@ export default class App extends Component {
 
   render() {
     if (this.state.data === null) {
-      return <div>isLoading</div>;
+      return <Loader />;
     } else if (this.state.data !== null) {
-      const { perPage, total, data } = this.state.data;
+      const { data } = this.state;
+
       return (
         <div className='App'>
-          <PaginatedBadge perPage={perPage} total={total} data={data} />
+          <PaginatedBadge perPage={30} data={data} />
           <style jsx>{``}</style>
         </div>
       );
